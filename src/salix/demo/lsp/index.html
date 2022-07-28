@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <script src="/salix/salix.js"></script>
+	  <link rel="stylesheet" href="/salix/lib/codemirror.css">
+	<script src="/salix/lib/codemirror.js"></script>
+		<script src="/salix/lib/javascript.js"></script>
+		<script src="/salix/lib/simple.js"></script>
+		<script src="/salix/lib/salix-cm.js"></script>
+
+	  <script>document.addEventListener("DOMContentLoaded", (event) => {
+			var salix = new Salix("lspDemo");
+
+			registerCodeMirror(salix);
+     		salix.start();
+		});</script>
+  <head>
+	  <body><div id="lspDemo"></div></body>
+</html>
