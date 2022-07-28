@@ -34,7 +34,7 @@ alias LspModel = tuple[
 
 LspModel lspInit() {
     Mode languageMode = grammar2mode("ql", #Form);
-    LspModel model = <"Initialized model", languageMode>;
+    LspModel model = <qlDemoText, languageMode>;
 
     return model;
 }
