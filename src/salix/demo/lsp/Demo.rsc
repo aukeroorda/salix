@@ -34,7 +34,7 @@ alias LspModel = tuple[
 
 LspModel lspInit() {
     Mode languageMode = grammar2mode("ql", #Form);
-    LspModel model = <qlDemoText, languageMode>;
+    LspModel model = <qlExampleProgram, languageMode>;
 
     return model;
 }
@@ -56,13 +56,6 @@ LspModel lspUpdate(Msg msg, LspModel model) {
     return model;
 }
 
-// list[str] byLine(str sep, str text) {
-//     if (/^<before:.*?><sep>/m := s) {
-//         return [before] + byLine(sep, s[size(before) + size(sep)..]);
-//     }
-
-//     return [s];
-// }
 list[str] mySplit(str sep, str s) {
   if (/^<before:.*?><sep>/m := s) {
     return [before] + mySplit(sep, s[size(before) + size(sep)..]);
@@ -76,6 +69,9 @@ str updateSrc(str src, int fromLine, int toLine, int fromCol, int toCol, str tex
     int to = from + size(removed);
 
     str newsrc = src[..from] + text + src[to..];
+
+    println("updated text with <text>");
+
     return newsrc;
 }
 

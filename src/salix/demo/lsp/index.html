@@ -8,8 +8,11 @@
 		<script src="/salix/lib/simple.js"></script>
 		<script src="/salix/lib/salix-cm.js"></script>
 
-	  <script>document.addEventListener("DOMContentLoaded", (event) => {
-			var salix = new Salix("lspDemo");
+	  <script>
+	  		var salix;
+			
+			document.addEventListener("DOMContentLoaded", (event) => {
+			salix = new Salix("lspDemo");
 
 			registerCodeMirror(salix);
      		salix.start();

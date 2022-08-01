@@ -119,7 +119,7 @@ lexical Id
   = ([a-z A-Z 0-9 _] !<< [a-z A-Z][\-a-z A-Z 0-9 _]* !>> [a-z A-Z 0-9 _]) \ Keywords
   ;
 
-public str qlDemoText = "form taxOfficeExample { 
+public str qlExampleProgram = "form taxOfficeExample { 
   \"Did you buy a house in 2010?\"
     hasBoughtHouse: boolean
     
