@@ -20,7 +20,7 @@ import salix::demo::lsp::QL;
 
 SalixApp[LspModel] lspApp(str id = "lspDemo") = makeApp(id, lspInit, lspView, lspUpdate, parser = parseMsg);
 
-App[LspModel] lspWepApp()
+App[LspModel] lspWebApp()
     = webApp(
         lspApp(),
         |project://salix/src/salix/demo/lsp/index.html|,
@@ -79,6 +79,6 @@ void lspView(LspModel model) {
     div(() {
         h4("lspSalix demo");
         codeMirrorWithMode("myCodeMirror", model.mode, onChange(textChange), height(400), 
-            mode("statemachine"), indentWithTabs(false), lineNumbers(true), \value(model.src));
+            mode("ql"), indentWithTabs(false), lineNumbers(true), \value(model.src));
     });
 }
